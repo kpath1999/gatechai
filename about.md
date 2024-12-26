@@ -5,7 +5,7 @@ permalink: /about/
 includelink: true
 ---
 
-As a curious outsider looking into the world of artificial intelligence, I found myself fascinated by the research happening at Georgia Tech. However, I quickly realized that the gap between academic papers and public understanding was vast. This realized sparked an idea: what if we could bridge this divide? Thus, the Georgia Tech AI Podcast was born.
+As an outsider looking into the world of artificial intelligence, I found myself fascinated by the research happening at Georgia Tech. However, I quickly realized that the gap between academic papers and public understanding was vast. This realized sparked an idea: what if we could bridge this divide? Thus, the Georgia Tech AI Podcast was born.
 
 Our mission is simple yet ambitious - to make cutting-edge AI research accessible to everyone. We divide into the minds of top researchers at Tech who are shaping the future of the intelligence age.
 
