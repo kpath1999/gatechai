@@ -1,163 +1,30 @@
+---
+layout: none
+---
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Georgia Tech AI Podcast</title>
-    <description>Demystifying cutting-edge AI research from Georgia Tech&apos;s top minds, making this knowledge accessible to all.</description>
-    <link>https://georgiatech.ai/</link>
-    <atom:link href="https://georgiatech.ai/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 26 Dec 2024 16:14:40 +0530</pubDate>
-    <lastBuildDate>Thu, 26 Dec 2024 16:14:40 +0530</lastBuildDate>
-    <generator>Jekyll v4.3.4</generator>
-    
+    <title>{{ site.title | xml_escape }}</title>
+    <description>{{ site.description | xml_escape }}</description>
+    <link>{{ site.url }}{{ site.baseurl }}/</link>
+    <atom:link href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml" />
+    <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
+    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
+    <generator>Jekyll v{{ jekyll.version }}</generator>
+    {% for post in site.posts limit:10 %}
       <item>
-        <title>#2 - Rishabh Goel: Batteryless UAVs</title>
-        <description>&lt;style&gt;
-.post-header h1 {
-    font-size: 35px;
-}
-.post pre,
-.post code {
-    background-color: #fcfcfc;
-    font-size: 13px;
-}
-.post blockquote {
-    font-style: italic;
-    background: #f9f9f9;
-    border-left: 5px solid #ccc;
-    margin: 1.5em 10px;
-    padding: 0.5em 10px;
-}
-&lt;/style&gt;
-
-&lt;p&gt;In this episode, we delve into battery-free technologies, from UAVs that fly like birds to sensors that perform machine learning tasks amidst unpredictable energy conditions. This area is being researched by Rishabh Goel, as part of Professor Alexander Adams’ lab. Rishabh has also ventured into healthcare innovation with phantom organs, most recently a phantom lung.&lt;/p&gt;
-
-&lt;iframe style=&quot;border-radius:12px&quot; src=&quot;https://open.spotify.com/embed/episode/4tQVp0l21cQIgZC3jIUfdR?utm_source=generator&quot; width=&quot;100%&quot; height=&quot;152&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot; allow=&quot;autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture&quot; loading=&quot;lazy&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;&lt;strong&gt;Choosing projects.&lt;/strong&gt; His approach to selecting projects is straightforward: he pursues ideas he finds interesting and enjoyable. It could also help him learn a new skill. While he generates numerous ideas, he focuses on those that are fun for him - some of which eventually prove successful. Sustainability is a driving force behind this. He’s particularly interested in building products that stand the test of time, and capture energy from the surrounding environment in meaningful ways. There is abundant energy in our environment that’s often overlooked. Additionally, relying on fossil fuels and batteries can have adverse environmental impacts. There is a genuine need for more solutions that harness ambient energy.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Narrowing it down.&lt;/strong&gt; The project that perfectly embodies this approach is the battery-free UAV project. The initiative combines existing drone technologies with a batteryless system, pushing the limits of both flight capabilities and energy harvesting. The goal is to create a drone that can fly for as long as sunlight is available, enabling much longer missions. Such a technology could revolutionize several applications, including environmental monitoring, wildlife monitoring, volcano activity monitoring, and city air quality assessment.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Challenges ahead.&lt;/strong&gt; Drones today primarily rely on lithium-ion batteries. This is the most energy-dense option, but it has a few drawbacks. They are heavy, degrade rapidly, and are toxic to the environment. Battery-free drones aim to address these issues by directly harvesting energy from the environment. Several factors get in the way of realizing this vision. Funding is the main problem, as securing resources for a novel research area is an uphill battle. Some other issues:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Investigating suitable materials for drone construction and energy harvesting&lt;/li&gt;
-  &lt;li&gt;Balancing payload capacity with battery-free capabilities&lt;/li&gt;
-  &lt;li&gt;Lack of interdisciplinary expertise, no aerospace engineers on the team&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The complexity of the project lies in its numerous interconnected variables and design constraints.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Flapping wings.&lt;/strong&gt; They’re efficient, just like nature. The drone can switch between high-power flapping for lift and thrust, and low-power gliding to conserve energy. The flapping motion has two parts: a downward flap, where the wings move down, pushing air down and creating lift, and an upward flap, where the wings move up, which can create an unwanted downward force. Birds have clever ways to deal with this downward force. Their feathers form a solid surface on the down flap but let air through on the up flap. This reduces the downward force. Birds also adjust their wing angles to manage airflow during different parts of the flap. Their research team is trying to copy these bird techniques, but it’s challenging. Right now, their drone can fly, but it still creates too much downward force on the upward flap.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Material selection.&lt;/strong&gt; This was the crucial step. The team needed to balance durability, weight, and energy generation capabilities. For the body, the choice was straightforward: they required a material strong enough to withstand crashes but light enough to fly reliably. Carbon fiber emerged as the clear winner due to its excellent strength-to-weight ratio. The wings presented a more complex challenge. Initially, the team considered constructing the wings from solar panels to maximize energy harvesting. However, this idea had a significant flaw: as the wings flapped, the angle of the solar panels relative to the sun constantly changed. This resulted in inconsistent energy production, causing inefficient flapping or even failure to complete a flap cycle. To address this issue, a “solar parachute” design was developed. Solar panels were mounted on top of the drone, like a small canopy. While this added some drag, it was far less problematic than the energy loss caused by constantly changing panel angles on the wings. For the wings themselves, a lightweight nylon-type fabric was chosen. This material is flexible enough to generate lift, light enough to minimize motor size, and durable enough to withstand a few crashes. Keeping the wings light was essential—heavier wings would require a larger motor, which would demand more energy, creating a cycle of increasing weight and power requirements.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Energy management.&lt;/strong&gt; The team uses supercapacitors instead of traditional batteries. These are ‘high-capacity capacitors’ that serve a small energy buffer between the solar panels and the drone’s systems. They help maximize solar panel efficiency. Using a maximum power point tracker (MPPT), the drone can adjust its power draw to get the most energy from the solar panels. The supercapacitor helps stabilize this process. In addition to maximizing efficiency, it handles intermittent power. If there is a sudden drop in solar energy (say from cloud cover), the supercapacitor provides enough power to keep the drone stable until it can harvest more energy. However, supercapacitors are much less energy-dense than batteries, which creates challenges. To address this, the team developed an energy-aware flight controller. This system dynamically adjusts flight conditions based on harvested energy, changes throttle limits and motor speeds in real-time, predicts energy harvesting based on recent trends, and balances energy input and output to maintain flight. Unlike traditional drones that only worry about low battery levels when it’s time to land, this system constantly manages energy levels. It looks at the current energy being harvested, recent energy accumulation trends, and past energy consumption trends. Using this information, the controller predicts whether to lower or increase throttle, ensuring that energy input is always greater than or equal to energy output. When the supercapacitor has enough charge, the system can even push for higher performance. This dynamic approach allows the battery-free drone to adapt to changing energy conditions in real-time, making the most of its limited energy storage capacity.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;A practical reality.&lt;/strong&gt; Battery-free UAVs have an exciting future, but several areas need to be worked on:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Develop more UAVs with robust harvesting capabilities, reducing reliance on batteries.&lt;/li&gt;
-  &lt;li&gt;Address issues of extra weight, unreliable power supply, and sudden power loss risks.&lt;/li&gt;
-  &lt;li&gt;Create control systems that handle intermittent power and algorithms that account for energy uncertainty.&lt;/li&gt;
-  &lt;li&gt;Focus on fixed or flapping wing models that can glide or hover with minimal power.&lt;/li&gt;
-  &lt;li&gt;Boost research in long-duration, intervention-free flights.&lt;/li&gt;
-  &lt;li&gt;Develop better harvesting mechanisms, optimize storage and utilization.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;Battery-free inference.&lt;/strong&gt; Protean was a project led by Abu Bakar, a PhD student at Georgia Tech (now graduated). The idea behind this project was to create a prototyping platform to make research into battery-free computing more accessible, primarily for researchers or hobbyists trying to enter the field and learn more about it. Battery-free computing requires a lot of circuitry that isn’t necessary for traditional computing. For example, you need to be able to keep track of time even after losing power. In a battery-free computer, you can lose power, but you need to be able to tell how long it’s been since the last power outage. Most battery-free computing technologies use devices called timekeepers for this purpose. Battery-free computers typically rely on some sort of energy harvesting mechanism, such as solar panels, soil-powered harvesting, wind-powered harvesting, or thermal energy. You need an input that can accept energy from a harvester, which is quite different from a traditional power source. This often requires components like a Maximum Power Point Tracker (MPPT).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Digging into thresholds.&lt;/strong&gt; When such a system turns on, it draws a sudden surge of current, causing a voltage drop that pushes the system below its operating threshold. This creates a cycle where the system cannot maintain enough voltage to function. This is where the thresholding mechanism comes in. It disconnects energy storage from the computational components until a safe voltage level is reached. This buffer protects against the initial current spike, ensuring the system can turn on and operate smoothly. Protean takes this a step further with a variable threshold. It’s an adjustable floodgate: for quick tasks, set a lower threshold, turn on sooner; for complex tasks, set a higher threshold, accumulate more energy, do more work.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Modular design.&lt;/strong&gt; The team developed a modular system that allows users to snap on various peripherals. For example, to test facial recognition on a battery-free system, a camera module can be attached to the platform. Additional peripherals such as microphones, ADCs, or custom sensor boards can also be integrated. Power management is a key feature of the system. Users can dynamically control power to each sensor—whether external or internal to the board—using load switches. This enables an ultra-low-power state where virtually no components receive power. The modularity extends to the microcontroller itself, which can be replaced to support development on new platforms. The system utilizes a connector similar to M.2 SSDs, called Micromod from SparkFun. This design allows the platform to accommodate various microcontroller packages, enabling users to pair any microcontroller with any sensor to create a wide range of battery-free applications. To support battery-free computing, the board integrates essential components such as an energy harvester input, a variable threshold mechanism, timekeeping capabilities, and load switches for precise power control.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Common theme.&lt;/strong&gt; There’s a red thread tying Protean with battery-free UAVs. Both rely on using energy intelligently and adapting to the environment. Once you go battery-free, you need to be much more careful with how you use energy because it becomes a very limited resource. With batteries, you don’t have to worry about energy until it’s time to replace the battery. The only energy conservation concern there is extending battery life. In day-to-day coding, you don’t worry about what happens if your code stops executing at a particular line. In battery-free systems, you must be more nuanced in how you design your hardware and write your code to work effectively.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Phantom lungs.&lt;/strong&gt; The phantom lungs project originated from the PhD work of Dr. Alexander Adams. The team’s trying to monitor e-cigarette usage and record data on when a person vapes, as well as bodily signals such as heart rate or fidgeting. The goal is to predict and provide just-in-time interventions to stop people when they’re craving rather than after they have already smoked. Right now, the team’s trying to figure out which bio-signals are most closely linked to cravings and how to design such interventions to prevent smoking. Phantom organs lets researchers run tests without relying on human subjects. For instance, without a phantom lung, you would need to smoke dozens of e-cigarettes just to design and validate devices, adding significant variability and potential health risks. The phantom lung itself is pretty simple. It doesn’t breathe or use oxygen like a real lung. It works more like a plunger: compressing to push air out and relaxing to suck air in. That’s all we need to simulate how someone inhales from an e-cigarette.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Moving forward.&lt;/strong&gt; There’s a lot happening right now. One big project is focused on a new way to harvest energy from impacts. On the vaping side, the team’s creating a device that snaps onto existing e-cigarettes and tracks when someone vapes, records the data, and sends it to an iPhone. Battery-free UAV work is ongoing and there are a few soft robotics projects keeping him busy as well.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;More of a visual learner? There’s a YouTube video too. Click &lt;a href=&quot;https://www.youtube.com/watch?v=fAKvoZkC-Zo&amp;amp;t=1408s&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Rishabh’s actively pushing the boundaries of engineering and sustainability. His work focuses on battery-free technologies and embedded systems. He’s one of the key minds behind Protean, a platform that enables battery-free sensors to perform advanced machine learning tasks while adapting to unpredictable energy conditions. He’s also explored the skies with his work on battery-free UAVs, inspired by bird flight. Imagine a drone powered entirely by solar energy, capable of ultra-long missions without the need for batteries. And if that’s not enough, Rishabh has also ventured into healthcare innovation with his work on phantom organs, like the phantom lung.&lt;/p&gt;
-</description>
-        <pubDate>Tue, 24 Dec 2024 16:00:00 +0530</pubDate>
-        <link>https://georgiatech.ai/2024/12/24/ep2batterylessuav/</link>
-        <guid isPermaLink="true">https://georgiatech.ai/2024/12/24/ep2batterylessuav/</guid>
-        
-        
+        <title>{{ post.title | xml_escape }}</title>
+        <description>{{ post.content | xml_escape }}</description>
+        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
+        <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
+        <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
+        {% for tag in post.tags %}
+        <category>{{ tag | xml_escape }}</category>
+        {% endfor %}
+        {% for cat in post.categories %}
+        <category>{{ cat | xml_escape }}</category>
+        {% endfor %}
       </item>
-    
-      <item>
-        <title>#1 - Sandilya Sai Garimella: Multi-Robot Networks</title>
-        <description>&lt;style&gt;
-.post-header h1 {
-    font-size: 35px;
-}
-.post pre,
-.post code {
-    background-color: #fcfcfc;
-    font-size: 13px;
-}
-.post blockquote {
-    font-style: italic;
-    background: #f9f9f9;
-    border-left: 5px solid #ccc;
-    margin: 1.5em 10px;
-    padding: 0.5em 10px;
-}
-&lt;/style&gt;
-
-&lt;p&gt;In this episode, we delve into multi-robot networks, exploring how robots coordinate to tackle complex tasks. This area is being researched by Sandilya Sai Garimella, as part of Professor Lu Gan’s lab.&lt;/p&gt;
-
-&lt;iframe style=&quot;border-radius:12px&quot; src=&quot;https://open.spotify.com/embed/episode/0XHV07vqsajxBW9znfMz0P?utm_source=generator&amp;amp;t=0&quot; width=&quot;100%&quot; height=&quot;152&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot; allow=&quot;autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture&quot; loading=&quot;lazy&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;&lt;strong&gt;Inspiration from nature.&lt;/strong&gt; Multi-agent systems are all around us. You’ll see this behavior in ants and bees. A striking example is a school of fish evading predators. Hundreds of fish coordinate effortlessly to escape dolphins. So much so that dolphins come up with a separate strategy as a multi-agent system to catch their prey. Individual fish do not coordinate with every other fish in the school. Rather, they focus on their nearest neighbors. In nerd-speak, this is called a disconnected graph. This structure is more efficient because communicating with every other fish would be expensive and time-consuming. Therein lies the tradeoff between optimality and real-time responsiveness. In the research that Sandilya works on, these systems of collaboration are called decentralized multi-agent networks, where each agent does not necessarily communicate with every other agent. You are focused on your neighborhood, and through each robot working with its own neighborhood, you achieve coordination that is comparable to that if it were fully centralized.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Centralization vs decentralization.&lt;/strong&gt; In a centralized network, all robots are fully connected and receive information from every other robot in the system. Decentralized networks, on the other hand, involve robots that do not coordinate with every other robot. Centralization, it turns out, has better optimality guarantees. This means that, in a map exploration setting, with every robot knowing every other robot’s actions, there is a better guarantee of covering the whole area by a certain amount of time. But the reason you want to move away from centralization is due to its real-time performance shortcomings. In such a system, robots need to transmit rich sensor data (e.g., RGB depth, LIDAR, 3D points) to all other robots (peer-to-peer) or a central base station. This can introduce substantial delays due to bandwidth limitations. If using a central base station, it would need to be extremely powerful to process and distribute data from all robots effectively. Such a system is also vulnerable to attacks. If an adversary compromises the base station, the entire fleet of robots could be grounded. That’s why it’s better to decentralize. They’re more resilient – if one robot fails, the others can continue to function.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Critical point.&lt;/strong&gt; Imagine you and a friend are exploring a room, each with a flashlight. You’d naturally want to spread out to cover more ground. Now, add more friends with flashlights. At first, each new explorer helps cover more area. But eventually, you reach a point where adding more explorers doesn’t really help – they’re just getting in each other’s way. That’s the critical point - where the benefits of having more robots (or flashlight-wielding friends) start to level off. Or, as economists call it, diminishing returns. As you add more robots, each new one contributes less to the overall mission. There’s a sweet spot where you have just enough robots to do the job efficiently.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Neighbor selection.&lt;/strong&gt; Imagine a swarm of drones exploring a vast area. There may be cases where a drone may need to know what’s happening on the other end of the map. The algorithm does not ignore this need completely. As drones zip around, they naturally come into range of different neighbors. Much like mingling at a party, you move around, chat with different groups, and gather information. This way, important information from far-away drones can still spread through the network, but without overwhelming everyone with constant chatter. The key, again, is finding a sweet spot: enough communication to be effective, but not so much that there’s information overload.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Sim-to-Real Gap.&lt;/strong&gt; Sandilya and his team did their best to narrow this difference by mimicking real-world challenges such as communication delays and signal attenuation. The gap between simulation and reality remains wide. Below are a few considerations from the real-world worth making:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Sensor measurements from cameras and IMUs may not follow the assumed Gaussian distribution.&lt;/li&gt;
-  &lt;li&gt;Hardware requirements are also daunting. Equipping 45 drones with RGBD cameras, depth sensors, semantic segmentation capabilities, and rotating gimbals would be costly.&lt;/li&gt;
-  &lt;li&gt;Specialized radio hardware is required for vehicle-to-vehicle communication, much like the DARPA Subterranean Challenge.&lt;/li&gt;
-  &lt;li&gt;Extensive software development would be needed, likely using ROS1 or ROS2, to manage fleet takeoff, task execution, and landing procedures.&lt;/li&gt;
-  &lt;li&gt;There are safety factors too, including protocols for handling drone crashes or malfunctions.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;The two paths ahead for robots.&lt;/strong&gt; “Robots can evolve in one of two ways. They can become cheap, reliable, and moderately productive. Or they remain complex and expensive but be spectacularly productive.” To democratize access, we would need to be in the first group. Sandilya’s first paper was on a cost-effective, six-legged robot made from styrofoam, costing under $1,500 – a far cry from the $30,000 price tag of Boston Dynamics’ Spot. It could move in 2D and had basic sensors. The robot used its walking motion to pluck dandelions without extra mechanisms, balancing cost and effectiveness.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Connection to nature.&lt;/strong&gt; As Sandilya points out, “nature does it really good”. It’s not over-engineered; it’s just right. Now, let’s talk about MIHGNN (Morphology Informed Heterogeneous Graph Neural Network). It’s not as complex as it sounds. Imagine a four-legged robot that can feel the ground beneath its feet. That’s contact perception. Each leg has sensors measuring forces, enabling it to predict future forces on the robot’s feet as it walks. This happens with the graph neural network – by creating a virtual map of the robot’s structure, with each sensor and motor as a point on this map, this ‘graph’ mirrors the robot’s body. The network is trained on all sorts of terrains – flat ground, slopes, rough patches, even stairs. It’s all about making robots more in tune with their environment. Currently, these legged robots struggle with adapting to unknown terrains. For instance, a robot trained on sand might be able to handle gravel due to similar slippage characteristics. However, it would likely fail in a forest with leaves.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Computational challenges.&lt;/strong&gt; Following Moore’s law, both training and inference capabilities of GNNs will improve over time. However, a significant bottleneck remains - collecting real-life data from robots. This requires more researchers to have access to robots and a common platform for data encoding. GNNs have one key advantage compared to traditional dynamics models. While both require significant compute power, GNNs can provide faster real-time inference once trained. The trade-off is clear: GNNs require more time and data for training but offer faster inference.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;His journey.&lt;/strong&gt; Sandilya’s transition from mechanical engineering to robotics highlights the interdisciplinary nature of the field. He faced challenges transitioning to programming, moving from MATLAB to C++, but overcame them with mentorship and perseverance. Here’s some of his advice:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;View tools as problem-solving instruments rather than ideologies. This will allow for more flexible solutioning.&lt;/li&gt;
-  &lt;li&gt;Develop a strong mathematical foundation, particularly in linear algebra. Stress fundamental concepts before venturing into the deep end.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;For him, the goal of robotics and AI isn’t to replace humans but to augment their capabilities. His greatest joy comes from seeing abstract ideas transform into functioning robots and simulations. He believes that significant advancements in robotics won’t always require revolutionary paradigm shifts. Instead, he finds motivation in the incremental, iterative nature of technological development.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;More of a visual learner? There’s a YouTube video too. Click &lt;a href=&quot;https://www.youtube.com/watch?v=LEN20XZSVOw&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Sandilya Sai Garimella is a graduate researcher in the field of robotics and artificial intelligence here at Georgia Tech. He’s worked closely on one of the crucial challenges in legged robotics: contact perception. Using graph neural networks, he is helping the field reconsider how robots understand and interact with their environment. Imagine a world where robots can navigate in any terrain as effortlessly as animals do. Sandilya’s research could one day make this a reality. And the best part is… his work doesn’t not stop there. It extends to multi-robot networks, exploring how systems can coordinate efficiently to tackle complex tasks, such as drone surveillance. What sets Sandilya apart is his multidisciplinary approach. He’s not just developing algorithms from an ivory tower. He’s reimagining how robots can learn and adapt in real-world scenarios. Beyond his research, we’ll also touch on the practical challenges of implementing these cutting-edge technologies and what it means for the future of industries ranging from agriculture to urban planning.&lt;/p&gt;
-</description>
-        <pubDate>Sat, 21 Dec 2024 16:00:00 +0530</pubDate>
-        <link>https://georgiatech.ai/2024/12/21/ep1mutirobotnetworks/</link>
-        <guid isPermaLink="true">https://georgiatech.ai/2024/12/21/ep1mutirobotnetworks/</guid>
-        
-        
-      </item>
-    
+    {% endfor %}
   </channel>
 </rss>
