@@ -3,7 +3,7 @@ layout: post
 comments: true
 title: "#2 - Rishabh Goel: Batteryless UAVs"
 excerpt: "Rishabh’s work focuses on batteryless technologies and embedded systems. His team recently built batteryless UAVs that flap like birds. He’s one of the key minds behind Protean, a platform that enables batteryless sensors to perform machine learning tasks amidst unpredictable energy conditions."
-date: 2024-12-21 10:30:00
+date: 2024-12-24 10:30:00
 mathjax: false
 ---
 

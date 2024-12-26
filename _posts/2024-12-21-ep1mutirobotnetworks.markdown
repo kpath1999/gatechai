@@ -3,7 +3,7 @@ layout: post
 comments: true
 title: "#1 - Sandilya Sai Garimella: Multi-Robot Networks"
 excerpt: "Sandilya's work focuses on multi-robot networks and contact perception using graph neural networks. His research aims to improve how robots coordinate and understand their environment, potentially leading to more versatile and capable robotic systems."
-date: 2024-12-24 10:30:00
+date: 2024-12-21 10:30:00
 mathjax: false
 ---
 
