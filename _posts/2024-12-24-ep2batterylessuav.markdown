@@ -68,6 +68,6 @@ The complexity of the project lies in its numerous interconnected variables and 
 
 **Moving forward.** There’s a lot happening right now. One big project is focused on a new way to harvest energy from impacts. On the vaping side, the team’s creating a device that snaps onto existing e-cigarettes and tracks when someone vapes, records the data, and sends it to an iPhone. Battery-free UAV work is ongoing and there are a few soft robotics projects keeping him busy as well.
 
-> More of a visual learner? There's a YouTube video too. Click [here](https://www.youtube.com/@gatechai).
+> More of a visual learner? There's a YouTube video too. Click [here](https://www.youtube.com/watch?v=fAKvoZkC-Zo&t=1408s).
 
 Rishabh's actively pushing the boundaries of engineering and sustainability. His work focuses on battery-free technologies and embedded systems. He’s one of the key minds behind Protean, a platform that enables battery-free sensors to perform advanced machine learning tasks while adapting to unpredictable energy conditions. He’s also explored the skies with his work on battery-free UAVs, inspired by bird flight. Imagine a drone powered entirely by solar energy, capable of ultra-long missions without the need for batteries. And if that’s not enough, Rishabh has also ventured into healthcare innovation with his work on phantom organs, like the phantom lung.
